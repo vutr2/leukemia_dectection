@@ -1,0 +1,13 @@
+# Data are tracked by DRIVE_MANIFEST.tsv (sha256), not by git
+data/
+# Local environments and generated files
+.venv/
+__pycache__/
+*.pyc
+outputs/
+results/
+notebooks/*.local.ipynb
+notebooks/*.executed.ipynb
+notebooks/local_colab_shim.py
+.ipynb_checkpoints/
+.DS_Store

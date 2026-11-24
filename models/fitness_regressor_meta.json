@@ -1,0 +1,9 @@
+{
+  "train_cohort": "LBC_SardiNIA_only",
+  "n_variants": 260,
+  "target": "s_z",
+  "cv_r2_gene_mean": -0.19388566011730712,
+  "cv_r2_esm_mean": -0.19449935596172963,
+  "cv_r2_full_mean": -0.21894382115711042,
+  "note": "BioVU excluded from train: no synonymous noise floor; raw s not commensurate with s_z."
+}

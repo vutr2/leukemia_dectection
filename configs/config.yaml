@@ -1,0 +1,40 @@
+project:
+  name: blood-cancer-early-detection
+  seed: 42
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  external_dir: data/external
+  maf_file: data/raw/data_mutations_extended.txt
+  clinical_file: data/raw/data_clinical_patient.txt
+  uniprot_cache: data/external/uniprot_cache.json
+
+filters:
+  min_vaf: 0.02
+  min_depth: 0     # BeatAML median depth is 75x; 100 would delete most of it
+  keep_kinds: [missense, nonsense, frameshift, splice, indel]
+  use_ch_panel: true
+
+labels:
+  # longitudinal | diagnosis | chip_risk
+  # 'longitudinal' is the only one that is not circular. Read the warning in
+  # data_processing.assign_labels before choosing anything else.
+  strategy: longitudinal
+  outcome_col: progressed_to_aml
+  positive_diagnoses: [AML, MDS, MPN, CMML]
+
+embedding:
+  # NVIDIA BioNeMo ESM-2 (TransformerEngine weights on HuggingFace).
+  # embedding.py falls back to facebook/esm2_t33_650M_UR50D if nvidia/ is unavailable.
+  model_name: nvidia/esm2_t33_650M_UR50D
+  # For fast iteration: nvidia/esm2_t12_35M_UR50D
+  batch_size: 1   # T4-safe; raise to 2-4 on A100/H100
+  weight_by_vaf: true
+
+model:
+  kind: logreg        # logreg | gbm | mlp
+  n_pca: 32
+  n_splits: 5
+  target_specificity: 0.98
+  out_path: models/classifier.joblib

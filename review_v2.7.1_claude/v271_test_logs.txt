@@ -1,0 +1,103 @@
+################ ENVIRONMENT: pinned_env
+======== environment.txt
+python 3.12.3 numpy 2.1.3 pandas 2.2.3 scipy 1.14.1
+======== unittest_v27.log
+test_missing_limit_never_imputed (src.test_feature_robustness_v27.V27Test.test_missing_limit_never_imputed) ... ok
+test_no_last_wave_ascertainment (src.test_feature_robustness_v27.V27Test.test_no_last_wave_ascertainment) ... ok
+test_tie_never_fake_perfect_top_quintile (src.test_feature_robustness_v27.V27Test.test_tie_never_fake_perfect_top_quintile) ... ok
+test_time_axis_is_versioned (src.test_feature_robustness_v27.V27Test.test_time_axis_is_versioned) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.398s
+
+OK
+======== pytest_v271.log
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.3.4, pluggy-1.6.0 -- /home/claude/lp-repo/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/claude/lp-repo
+collecting ... collected 27 items
+
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[clone_inference.py] PASSED [  3%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[progression_features.py] PASSED [  7%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[model_spec.py] PASSED [ 11%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[feature_robustness_v27.py] PASSED [ 14%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[finalize_v27.py] PASSED [ 18%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[model_spec_v27.py] PASSED [ 22%]
+tests/test_frozen_modules.py::test_fingerprint_ignores_comments_and_docstrings PASSED [ 25%]
+tests/test_frozen_modules.py::test_fingerprint_detects_logic_change PASSED [ 29%]
+tests/test_leakage_v27.py::test_v2_selection_invariant_to_last_wave_value PASSED [ 33%]
+tests/test_leakage_v27.py::test_known_pre_index_uses_patient_last_wave_not_variant_last_wave PASSED [ 37%]
+tests/test_leakage_v27.py::test_below_lod_and_missing_lod_rows_never_quantifiable PASSED [ 40%]
+tests/test_leakage_v27.py::test_lbc_depth_gate_applies_to_lbc_only PASSED [ 44%]
+tests/test_leakage_v27.py::test_implausible_lod_is_not_known PASSED      [ 48%]
+tests/test_leakage_v27.py::test_approx_time_axis_only_touches_gse288742_and_keeps_original PASSED [ 51%]
+tests/test_leakage_v27.py::test_unmapped_lbc1921_wave_raises PASSED      [ 55%]
+tests/test_leakage_v27.py::test_patient_truncate_drops_only_patient_last_wave PASSED [ 59%]
+tests/test_leakage_v27.py::test_policy_requires_two_powered_cohorts PASSED [ 62%]
+tests/test_leakage_v27.py::test_policy_threshold_is_inclusive_and_strict_below PASSED [ 66%]
+tests/test_leakage_v27.py::test_policy_overlap_powered_but_paired_underpowered_fails PASSED [ 70%]
+tests/test_reference_outputs.py::test_inputs_are_the_audited_tables PASSED [ 74%]
+tests/test_reference_outputs.py::test_run_reproduces_v27_audit PASSED    [ 77%]
+tests/test_reference_outputs.py::test_same_seed_runs_are_identical PASSED [ 81%]
+tests/test_repro_tools.py::test_close_tolerance_and_nan_handling PASSED  [ 85%]
+tests/test_repro_tools.py::test_compare_runs_detects_any_difference PASSED [ 88%]
+tests/test_repro_tools.py::test_max_numeric_deviation_counts_nan_mismatch PASSED [ 92%]
+tests/test_repro_tools.py::test_verify_outputs_passes_on_reference_and_fails_on_drift PASSED [ 96%]
+tests/test_repro_tools.py::test_verify_outputs_fails_if_classification_changes PASSED [100%]
+
+============================== 27 passed in 1.48s ==============================
+======== verify.log
+77 checks, 0 failed
+################ ENVIRONMENT: second_env_py313_pandas3
+======== environment.txt
+python 3.13.16 numpy 2.5.3 pandas 3.0.5 scipy 1.18.1
+======== unittest_v27.log
+test_missing_limit_never_imputed (src.test_feature_robustness_v27.V27Test.test_missing_limit_never_imputed) ... ok
+test_no_last_wave_ascertainment (src.test_feature_robustness_v27.V27Test.test_no_last_wave_ascertainment) ... ok
+test_tie_never_fake_perfect_top_quintile (src.test_feature_robustness_v27.V27Test.test_tie_never_fake_perfect_top_quintile) ... ok
+test_time_axis_is_versioned (src.test_feature_robustness_v27.V27Test.test_time_axis_is_versioned) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.492s
+
+OK
+======== pytest_v271.log
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-8.3.4, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/lp-repo
+plugins: anyio-4.15.1
+collecting ... collected 27 items
+
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[clone_inference.py] PASSED [  3%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[progression_features.py] PASSED [  7%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[model_spec.py] PASSED [ 11%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[feature_robustness_v27.py] PASSED [ 14%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[finalize_v27.py] PASSED [ 18%]
+tests/test_frozen_modules.py::test_frozen_module_semantics_unchanged[model_spec_v27.py] PASSED [ 22%]
+tests/test_frozen_modules.py::test_fingerprint_ignores_comments_and_docstrings PASSED [ 25%]
+tests/test_frozen_modules.py::test_fingerprint_detects_logic_change PASSED [ 29%]
+tests/test_leakage_v27.py::test_v2_selection_invariant_to_last_wave_value PASSED [ 33%]
+tests/test_leakage_v27.py::test_known_pre_index_uses_patient_last_wave_not_variant_last_wave PASSED [ 37%]
+tests/test_leakage_v27.py::test_below_lod_and_missing_lod_rows_never_quantifiable PASSED [ 40%]
+tests/test_leakage_v27.py::test_lbc_depth_gate_applies_to_lbc_only PASSED [ 44%]
+tests/test_leakage_v27.py::test_implausible_lod_is_not_known PASSED      [ 48%]
+tests/test_leakage_v27.py::test_approx_time_axis_only_touches_gse288742_and_keeps_original PASSED [ 51%]
+tests/test_leakage_v27.py::test_unmapped_lbc1921_wave_raises PASSED      [ 55%]
+tests/test_leakage_v27.py::test_patient_truncate_drops_only_patient_last_wave PASSED [ 59%]
+tests/test_leakage_v27.py::test_policy_requires_two_powered_cohorts PASSED [ 62%]
+tests/test_leakage_v27.py::test_policy_threshold_is_inclusive_and_strict_below PASSED [ 66%]
+tests/test_leakage_v27.py::test_policy_overlap_powered_but_paired_underpowered_fails PASSED [ 70%]
+tests/test_reference_outputs.py::test_inputs_are_the_audited_tables PASSED [ 74%]
+tests/test_reference_outputs.py::test_run_reproduces_v27_audit PASSED    [ 77%]
+tests/test_reference_outputs.py::test_same_seed_runs_are_identical PASSED [ 81%]
+tests/test_repro_tools.py::test_close_tolerance_and_nan_handling PASSED  [ 85%]
+tests/test_repro_tools.py::test_compare_runs_detects_any_difference PASSED [ 88%]
+tests/test_repro_tools.py::test_max_numeric_deviation_counts_nan_mismatch PASSED [ 92%]
+tests/test_repro_tools.py::test_verify_outputs_passes_on_reference_and_fails_on_drift PASSED [ 96%]
+tests/test_repro_tools.py::test_verify_outputs_fails_if_classification_changes PASSED [100%]
+
+============================== 27 passed in 1.89s ==============================
+======== verify.log
+77 checks, 0 failed

@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-22",
+  "task": "secondary vs de novo AML (BeatAML aml_ohsu_2022)",
+  "n_patients": 405,
+  "n_positive": 80,
+  "auc_baseline": 0.7078461538461539,
+  "auc_with_esm2": 0.7422692307692308,
+  "delta_nested_cv": 0.03442307692307689,
+  "null_mean": 0.004591346153846168,
+  "null_p95": 0.01470961538461537,
+  "ratio_to_null_p95": 2.340175186298863,
+  "eln2022_rule_auc": 0.698,
+  "esm2_model": "facebook/esm2_t33_650M_UR50D",
+  "pca_grid": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "ambiguous_handling": "drop",
+  "note": "NOT early detection. All samples at AML diagnosis."
+}
